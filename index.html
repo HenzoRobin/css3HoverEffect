@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		transition: .2s ;
+		font-family: "Microsoft yahei";
+		color: #fff;
+		box-sizing: border-box;
+	}
+	.container {
+		max-width:1050px;
+		background-color: pink; 
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: center;
+	}
+	.myBox {
+		width: 350px;
+		height: 200px;
+		overflow: hidden;
+		position: relative;
+	}
+	.movepanel {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 350px;
+		height: 200px;
+		background-color: rgba(0, 0, 0, .4);
+		opacity: 0;
+		overflow: hidden;
+	}
+	.movepanel h2 {
+		padding: 5px;
+		font-weight: 500;
+		text-align: center;
+		background-color: rgba(0, 0, 0, .6);
+		transform: translateY(-90px);
+	}
+	.link {
+		text-decoration: none;
+		padding: 5px 10px;
+		text-align: center;
+		border: 1px solid #eee;
+		margin: 0 auto;
+		display: block;
+		width: 120px;
+		transform: translateY(120px);
+		font-weight: 100;
+	}
+	.myBox:hover .movepanel {
+		opacity: 1;
+	}
+	.myBox:hover img {
+		transform: scale(1.1, 1.1)
+	}
+	.link:hover {
+		box-shadow: 0 0 10px #fff;
+	}
+	.myBox:hover .link {
+		transform: translateY(30px);
+	}
+	.myBox:hover .movepanel>h2 {
+		transform: translateY(0px);
+	}
+
+	.myBox2 {
+		width: 350px;
+		height: 200px;
+		overflow: hidden;
+	}
+	.movepanel2 {
+		width: 350px;
+		height: 100px;
+		background-color: #333;
+		transform: translateY(150px);
+	}
+	.movepanel2 h2 {
+		padding: 6px;
+		font-weight: 500;
+		border: 1px solid #fff;
+		display: block;
+		width: 120px;
+		text-align: center;
+		float: left;
+		margin-left: 15px;
+	}
+	.icon {
+		float: left;
+		margin-left: 15px;
+		transform: translateY(25px);
+	}
+	.link2,.link2-1,.link2-2 {
+		transform: translateY(90px);
+		text-decoration: none;
+		display: inline-block;
+		padding: 5px;
+		border: 1px solid #fff;
+		font-weight: 100;
+	}
+	.link2 {
+		transition: .3s;
+	}
+	.link2-1 {
+		transition: .5s;
+	}
+	.link2-2 {
+		transition: .7s;
+	}
+	.myBox2:hover .img2 {
+		transform: translateY(-20px);
+	}
+	.myBox2:hover .movepanel2{
+		transform: translateY(-90px);
+	}
+	.myBox2:hover .movepanel2>.icon>.link2{
+		transform: translateY(0px);
+	}
+	.myBox2:hover .movepanel2>.icon>.link2-1{
+		transform: translateY(0px);
+	}
+	.myBox2:hover .movepanel2>.icon>.link2-2{
+		transform: translateY(0px);
+	}
+	.link2:hover,
+	.link2-1:hover,
+	.link2-2:hover {
+		box-shadow: 0 0 10px #fff;
+	}
+
+	.myBox3 {
+		width: 350px;
+		height: 200px;
+		position: relative;
+		text-align: center;
+		overflow: hidden;
+	}
+	.movepanel3 {
+		width: 280px;
+		height: 140px;
+		position: absolute;
+		top: 30px;
+		left: 35px;
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+		transform: scale(0);
+		transition:.35s ;
+	}
+	.myBox3:hover .img3 {
+		filter: brightness(0.4);
+		transform: scale(1.5);
+	}
+	.myBox3:hover .movepanel3 {
+		opacity: 1;
+		transform: scale(1);
+	}
+	.link3 {
+		text-decoration: none;
+		padding: 5px 10px;
+		text-align: center;
+		border: 1px solid #eee;
+		margin: 0 auto;
+		display: block;
+		width: 120px;
+		font-weight: 100;
+	}
+	.link3:hover {
+		box-shadow: 0 0 10px #fff;
+	}
+	.movepanel3 h2{
+		background-color: transparent;
+		transition: .8s;
+		transform: scale(0);
+		transform: translate3d(0, 100%, 0);
+		font-weight: 500;
+	}
+	.movepanel3 a{
+		background-color: transparent;
+		transition: .8s;
+		transform: translate3d(0, -100%, 0);
+	}
+	.myBox3:hover .movepanel3 h2,
+	.myBox3:hover .movepanel3 a {
+		transform: translate3d(0, 0, 0);
+	}
+
+	.myBox4 {
+		width: 350px;
+		height: 200px;
+		position: relative;
+		overflow: hidden;
+	}
+	.myBox4 .img4 {
+		transform: translateX(-20px);
+		filter: brightness(1);
+	}
+	.myBox4:hover .img4 {
+		transform: translateX(0);
+		filter: brightness(.4);
+	}
+	.movepanel4 {
+		width: 350px;
+		height: 200px;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.movepanel4 h2 {
+		padding: 10px;
+		font-weight: 500;
+		width: 130px;
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		margin-top: 30px;
+		overflow: hidden;
+		color: #111;
+	}
+	.myBox4:hover h2{
+		color: #fff;
+	}
+	.movepanel4 h2::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: cyan;
+		transform: translateX(-150px);
+		transition: .35s;
+	}
+	.myBox4:hover h2::after {
+		transform: translateX(0px);
+	}
+	.myBox4:hover .link4 {
+		transform: translateX(0px);
+	}
+	.link4 {
+		text-decoration: none;
+		padding: 5px 10px;
+		border: 1px solid #fff;
+		display: block;
+		width: 120px;
+		text-align: center;
+		margin: 30px auto 0 auto;
+		transform: translateX(500px);
+		transition: .35s;
+	}
+	.link4:hover {
+		box-shadow: 0 0 10px #fff;
+	}
+
+	.myBox5 {
+		width: 350px;
+		height: 200px;
+		overflow: hidden;
+		position: relative;
+		opacity: 0.7;
+	}
+	.myBox5 .movepanel5 {
+		width: 350px;
+		height: 200px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+	}
+	.movepanel5 h2 {
+		position: relative;
+		text-align: center;
+		padding: 5px 10px;
+		background-color: rgba(0, 0, 0, .6);
+		font-weight: 500;
+		transform: translateY(70px);
+	}
+	.myBox5:hover .movepanel5 h2 {
+		transform: translateY(30px);
+	}
+	.link5 {
+		padding: 7px 14px;
+		text-align: center;
+		display: inline-block;
+		text-decoration: none;
+		padding: 65px 100px;
+		border: 1px solid #222;
+		transform: scale(0);
+		background-color: transparent;
+		margin: -50px 0 0 32px;
+		font-weight: 100;
+	}
+	.myBox5:hover .link5 {
+		transform: scale(1);
+	}
+	.myBox5:hover {
+		opacity: 1;
+	}
+	.link5:hover {
+		box-shadow: 0 0 5px #fff;
+	}
+
+	.myBox6 {
+		width: 350px;
+		height: 200px;
+		position: relative;
+		overflow: hidden;
+	}
+	.movepanel6 {
+		width: 350px;
+		height: 200px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+	}
+	.img6 {
+		transform: translateX(-20px);
+	}
+	.myBox6:hover .img6 {
+		transform: translateX(0px);
+	}
+	.movepanel6 h2 {
+		text-align: left;
+		margin-top: 70px;	
+		padding-left: 50px;
+		font-weight: 500;
+		color: #333;
+	}
+	.movepanel6 h2::after {
+		content: '';
+		border: 1px solid #222;
+		position: absolute;
+		top: 30px;
+		bottom: 30px;
+		left: 30px;
+		right: 30px;
+		transform: translateX(-30px);
+		opacity:0; 
+		transition: 0.3s;
+	}
+	.myBox6:hover .movepanel6 h2::after{
+		transform: translateX(0px);
+		opacity:1; 
+	}
+	.link6 {
+		display: block;
+		text-decoration: none;
+		font-weight: 300;
+		font-size: 20px;
+		transform: translateX(10px);
+		opacity: 0;
+		transition: .7s;
+		color: #222;
+	}
+	.myBox6:hover .link6 {
+		transform: translateX(50px);
+		opacity: 1;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">	
+	    <div class="myBox">
+	        <img class="img" src="http://placehold.it/350x200">
+	        <div class="movepanel">
+	           <h2>EFFECT 1</h2>
+	           <a class="link" href="#">Description</a>
+	        </div>
+	    </div>
+	    <div class="myBox2">
+	        <img class="img2" src="http://placehold.it/350x200">
+	        <div class="movepanel2">
+	           <h2>EFFECT 2</h2>
+	           <div class="icon">
+	        		<a class="link2" href="#">Wechat</a>
+	          	 	<a class="link2-1" href="#">Weibo</a>
+	          	 	<a class="link2-2" href="#">QQ</a>
+	           </div>
+	        </div>
+	    </div>
+	    <div class="myBox3">
+	        <img class="img3" src="http://placehold.it/350x200">
+	        <div class="movepanel3">
+	           <h2>EFFECT 3</h2>
+	        	<a class="link3" href="#">Description</a>
+	        </div>
+	    </div>
+	    <div class="myBox4">
+	        <img class="img4" src="http://placehold.it/370x200">
+	        <div class="movepanel4">
+	           <h2>EFFECT 4</h2>
+	        	<a class="link4" href="#">Description</a>
+	        </div>
+	    </div>
+	    <div class="myBox5">
+	        <img class="img5" src="http://placehold.it/350x200">
+	        <div class="movepanel5">
+	            <h2>EFFECT 5</h2>
+	        	<a class="link5" href="#">Description</a>
+	        </div>
+	    </div>
+	    <div class="myBox6">
+	        <img class="img6" src="http://placehold.it/370x200">
+	        <div class="movepanel6">
+	            <h2>EFFECT 6</h2>
+	        	<a class="link6" href="#">Description</a>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>
